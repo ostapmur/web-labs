@@ -1,0 +1,221 @@
+/* Подключение шрифта Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* Глобальные CSS-переменные */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --text-color: #1e293b;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --base-padding: 1.5rem;
+    --border-radius: 8px;
+    --font-family: 'Inter', sans-serif;
+}
+
+/* Сброс параметров и настройка блочной модели */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--base-padding);
+}
+
+/* Хедер и Навигация */
+.header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header__avatar {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.nav {
+    background-color: var(--text-color);
+    margin-top: 1rem;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+    padding: 0.75rem 0;
+}
+
+.nav__list a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav__list a:hover {
+    color: var(--primary-color);
+}
+
+/* Секции и карточки */
+.main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: var(--primary-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: var(--base-padding);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+/* Макроструктура Дашборда (CSS Grid) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.badge {
+    align-self: flex-start;
+    padding: 0.25rem 0.5rem;
+    background-color: #dcfce7;
+    color: #166534;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.badge--progress {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* Формы */
+.form {
+    background-color: var(--card-bg);
+    padding: var(--base-padding);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form__fieldset {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.form__legend {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form__group:last-child {
+    margin-bottom: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--border-radius) / 2);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+.inline-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.btn {
+    align-self: flex-start;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Подвал */
+.footer {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #64748b;
+}
